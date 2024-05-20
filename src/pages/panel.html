@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0"
+		/>
+		<title>Feedbackr panel</title>
+		<link
+			rel="stylesheet"
+			href="../output.css"
+		/>
+	</head>
+	<body class="m-6 dark:bg-slate-800">
+		<header>
+			<nav
+				class="border-gray-200 bg-gray-50 dark:bg-gray-800 dark:border-gray-700"
+			>
+				<div
+					class="flex gap-3 items-center justify-between p-4 w-full *:flex *:items-center *:gap-3 *:justify-center *:p-4 *:w-full"
+				>
+					<div>
+						<a class="flex items-center space-x-3 rtl:space-x-reverse">
+							<img
+								src="https://placehold.co/512x512"
+								alt=""
+								width="64"
+							/>
+						</a>
+						<h1
+							class="text-1xl font-extrabold text-gray-900 dark:text-white md:text-2xl lg:text-4xl"
+						>
+							Welcome to your
+							<span
+								class="text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400"
+								>panel</span
+							>...
+						</h1>
+					</div>
+					<div>
+						<button
+							id="theme-toggle"
+							type="button"
+							class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5"
+						>
+							<svg
+								id="theme-toggle-dark-icon"
+								class="hidden w-5 h-5"
+								fill="currentColor"
+								viewBox="0 0 20 20"
+								xmlns="http://www.w3.org/2000/svg"
+							>
+								<path
+									d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"
+								></path>
+							</svg>
+							<svg
+								id="theme-toggle-light-icon"
+								class="hidden w-5 h-5"
+								fill="currentColor"
+								viewBox="0 0 20 20"
+								xmlns="http://www.w3.org/2000/svg"
+							>
+								<path
+									d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+									fill-rule="evenodd"
+									clip-rule="evenodd"
+								></path>
+							</svg>
+						</button>
+						<div class="flex gap-3 text-center min-w-max">
+							<button
+								class="overflow-y-auto text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
+								type="button"
+								data-drawer-target="drawer-top-example"
+								data-drawer-show="drawer-top-example"
+								data-drawer-placement="top"
+								aria-controls="drawer-top-example"
+							>
+								Page settings
+							</button>
+							<button
+								class="overflow-y-auto text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
+								type="button"
+							>
+								Log out
+							</button>
+						</div>
+					</div>
+				</div>
+			</nav>
+		</header>
+		<main>
+			<div
+				id="drawer-top-example"
+				class="fixed top-0 left-0 right-0 z-40 w-full p-4 transition-transform -translate-y-full bg-white dark:bg-gray-800"
+				tabindex="-1"
+				aria-labelledby="drawer-top-label"
+			>
+				<h5
+					id="drawer-top-label"
+					class="inline-flex items-center mb-4 text-base font-semibold text-gray-500 dark:text-gray-400"
+				>
+					Manage your feedback page settings
+				</h5>
+				<button
+					type="button"
+					data-drawer-hide="drawer-top-example"
+					aria-controls="drawer-top-example"
+					class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 absolute top-2.5 end-2.5 inline-flex items-center justify-center dark:hover:bg-gray-600 dark:hover:text-white"
+				>
+					<svg
+						class="w-3 h-3"
+						aria-hidden="true"
+						xmlns="http://www.w3.org/2000/svg"
+						fill="none"
+						viewBox="0 0 14 14"
+					>
+						<path
+							stroke="currentColor"
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							stroke-width="2"
+							d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"
+						/>
+					</svg>
+					<span class="sr-only">Close menu</span>
+				</button>
+				<div class="flex items-center gap-3 *:flex *:items-center *:gap-3">
+					<button
+						data-modal-target="new-image-modal"
+						data-modal-toggle="new-image-modal"
+						type="button"
+						class="text-gray-900 hover:text-white border border-gray-800 hover:bg-gray-900 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 dark:border-gray-600 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-800"
+					>
+						<svg
+							class="w-6 h-6 text-gray-800 dark:text-white"
+							aria-hidden="true"
+							xmlns="http://www.w3.org/2000/svg"
+							width="24"
+							height="24"
+							fill="none"
+							viewBox="0 0 24 24"
+						>
+							<path
+								stroke="currentColor"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								stroke-width="2"
+								d="m3 16 5-7 6 6.5m6.5 2.5L16 13l-4.286 6M14 10h.01M4 19h16a1 1 0 0 0 1-1V6a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1Z"
+							/>
+						</svg>
+
+						Change logo
+					</button>
+					<button
+						data-modal-target="new-name-modal"
+						data-modal-toggle="new-name-modal"
+						type="button"
+						class="text-gray-900 hover:text-white border border-gray-800 hover:bg-gray-900 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 dark:border-gray-600 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-800"
+					>
+						<svg
+							class="w-6 h-6 text-gray-800 dark:text-white"
+							aria-hidden="true"
+							xmlns="http://www.w3.org/2000/svg"
+							width="24"
+							height="24"
+							fill="none"
+							viewBox="0 0 24 24"
+						>
+							<path
+								stroke="currentColor"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								stroke-width="2"
+								d="M15.583 8.445h.01M10.86 19.71l-6.573-6.63a.993.993 0 0 1 0-1.4l7.329-7.394A.98.98 0 0 1 12.31 4l5.734.007A1.968 1.968 0 0 1 20 5.983v5.5a.992.992 0 0 1-.316.727l-7.44 7.5a.974.974 0 0 1-1.384.001Z"
+							/>
+						</svg>
+						Change name
+					</button>
+				</div>
+			</div>
+
+			<div
+				id="new-image-modal"
+				tabindex="-1"
+				aria-hidden="true"
+				class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full"
+			>
+				<div class="relative p-4 w-full max-w-2xl max-h-full">
+					<!-- Modal content -->
+					<div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+						<!-- Modal header -->
+						<div
+							class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600"
+						>
+							<h3 class="text-xl font-semibold text-gray-900 dark:text-white">
+								Upload new logo
+							</h3>
+							<button
+								type="button"
+								class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
+								data-modal-hide="new-image-modal"
+							>
+								<svg
+									class="w-3 h-3"
+									aria-hidden="true"
+									xmlns="http://www.w3.org/2000/svg"
+									fill="none"
+									viewBox="0 0 14 14"
+								>
+									<path
+										stroke="currentColor"
+										stroke-linecap="round"
+										stroke-linejoin="round"
+										stroke-width="2"
+										d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"
+									/>
+								</svg>
+								<span class="sr-only">Close modal</span>
+							</button>
+						</div>
+						<!-- Modal body -->
+						<div class="p-4 md:p-5 space-y-4">
+							<div class="flex items-center justify-center w-full">
+								<label
+									for="dropzone-file"
+									class="flex flex-col items-center justify-center w-full h-64 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 dark:hover:bg-bray-800 dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600"
+								>
+									<div
+										class="flex flex-col items-center justify-center pt-5 pb-6"
+									>
+										<svg
+											class="w-8 h-8 mb-4 text-gray-500 dark:text-gray-400"
+											aria-hidden="true"
+											xmlns="http://www.w3.org/2000/svg"
+											fill="none"
+											viewBox="0 0 20 16"
+										>
+											<path
+												stroke="currentColor"
+												stroke-linecap="round"
+												stroke-linejoin="round"
+												stroke-width="2"
+												d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2"
+											/>
+										</svg>
+										<p class="mb-2 text-sm text-gray-500 dark:text-gray-400">
+											<span class="font-semibold">Click to upload</span> or drag
+											and drop
+										</p>
+										<p class="text-xs text-gray-500 dark:text-gray-400">
+											SVG, PNG, JPG or GIF (MAX. 800x400px)
+										</p>
+									</div>
+									<input
+										id="dropzone-file"
+										type="file"
+										class="hidden"
+									/>
+								</label>
+							</div>
+						</div>
+						<!-- Modal footer -->
+						<div
+							class="flex items-center p-4 md:p-5 border-t border-gray-200 rounded-b dark:border-gray-600"
+						>
+							<button
+								data-modal-hide="new-image-modal"
+								type="button"
+								class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+							>
+								Save changes
+							</button>
+							<button
+								data-modal-hide="new-image-modal"
+								type="button"
+								class="py-2.5 px-5 ms-3 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"
+							>
+								Cancel
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div
+				id="new-name-modal"
+				tabindex="-1"
+				aria-hidden="true"
+				class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full"
+			>
+				<div class="relative p-4 w-full max-w-2xl max-h-full">
+					<!-- Modal content -->
+					<div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+						<!-- Modal header -->
+						<div
+							class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600"
+						>
+							<h3 class="text-xl font-semibold text-gray-900 dark:text-white">
+								Set new name
+							</h3>
+							<button
+								type="button"
+								class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
+								data-modal-hide="new-name-modal"
+							>
+								<svg
+									class="w-3 h-3"
+									aria-hidden="true"
+									xmlns="http://www.w3.org/2000/svg"
+									fill="none"
+									viewBox="0 0 14 14"
+								>
+									<path
+										stroke="currentColor"
+										stroke-linecap="round"
+										stroke-linejoin="round"
+										stroke-width="2"
+										d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"
+									/>
+								</svg>
+								<span class="sr-only">Close modal</span>
+							</button>
+						</div>
+						<!-- Modal body -->
+						<div class="p-4 md:p-5 space-y-4">
+							<div>
+								<input
+									placeholder="Joogle"
+									type="text"
+									id="large-input"
+									class="block w-full p-4 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-base focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+								/>
+							</div>
+						</div>
+						<!-- Modal footer -->
+						<div
+							class="flex items-center p-4 md:p-5 border-t border-gray-200 rounded-b dark:border-gray-600"
+						>
+							<button
+								data-modal-hide="new-name-modal"
+								type="button"
+								class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+							>
+								Save changes
+							</button>
+							<button
+								data-modal-hide="new-name-modal"
+								type="button"
+								class="py-2.5 px-5 ms-3 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"
+							>
+								Cancel
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="py-12 flex gap-6 flex-wrap">
+				<!-- prettier-ignore -->
+				<div
+					class="grid grid-rows-2 p-6 rounded-xl bg-slate-700 text-slate-200 dark:bg-slate-950 dark:text-gray-400 *:flex *:gap-2 *:items-center"
+				>
+					<h3 class="p-2">
+						
+						<svg
+							class="w-4 h-4 text-gray-500 dark:text-gray-400"
+							aria-hidden="true"
+							xmlns="http://www.w3.org/2000/svg"
+							fill="currentColor"
+							viewBox="0 0 20 16"
+						>
+							<path
+								d="m10.036 8.278 9.258-7.79A1.979 1.979 0 0 0 18 0H2A1.987 1.987 0 0 0 .641.541l9.395 7.737Z"
+							/>
+							<path
+								d="M11.241 9.817c-.36.275-.801.425-1.255.427-.428 0-.845-.138-1.187-.395L0 2.6V14a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V2.5l-8.759 7.317Z"
+							/></svg>email@example.com
+					</h3>
+					<h5 class="p-2 px-1">
+						<svg
+							class="w-6 h-6 text-gray-800 dark:text-white"
+							aria-hidden="true"
+							xmlns="http://www.w3.org/2000/svg"
+							width="24"
+							height="24"
+							fill="none"
+							viewBox="0 0 24 24"
+						>
+							<path
+								stroke="currentColor"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								stroke-width="2"
+								d="M12 8v4l3 3m6-3a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+							/>
+						</svg>
+						yyyy/MM/dd HH:mm:ss
+					</h5>
+					<p class="whitespace-pre-line">
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+						eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+						ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+						aliquip ex ea commodo consequat. Duis aute irure dolor in
+						reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+						pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+						culpa qui officia deserunt mollit anim id est laborum.
+					</p>
+				</div>
+			</div>
+		</main>
+	</body>
+	<script src="../../node_modules/flowbite/dist/flowbite.min.js"></script>
+	<script src="../js/theme-manager.js"></script>
+</html>
